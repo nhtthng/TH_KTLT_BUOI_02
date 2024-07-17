@@ -28,6 +28,16 @@ void Cau_3(int a[], int& n, int x) {
 	}
 }
 
+void Cau_4(int a[], int& n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n;j++) {
+			if (a[i] < a[j]) {
+				swap(a[j], a[i]);
+			}
+		}
+	}
+}
+
 void Xuatmang(int a[], int n) {
 	for (int i = 0; i < n; i++) {
 		cout << "Cac phan tu trong mang la: " << a[i] << endl;
@@ -40,7 +50,9 @@ int main() {
 	cout << "Nhap so luong: ";
 	cin >> n;
 	Cau_2(a, n);
-	Cau_3(a, n,24);
+	Xuatmang(a, n);
+	Cau_4(a, n);
+	cout << "Mang sau khi sap xep la" << endl;
 	Xuatmang(a, n);
 	return 0;
 }
