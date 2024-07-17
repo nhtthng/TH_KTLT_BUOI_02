@@ -38,6 +38,31 @@ void Cau_4(int a[], int& n) {
 	}
 }
 
+void Cau_5(int a[], int& n, int x) {
+	int left = 0;
+	int right = n - 1;
+	int find = -1;
+	for (int i = left; i <= right; i++) {
+		int mid = (left + right) / 2;
+		if (a[mid] == x) {
+			find = mid;
+			break;
+		}
+		else if (a[mid] > x) {
+			right = mid - 1;
+		}
+		else {
+			left = mid + 1;
+		}
+	}
+	if (find != -1) {
+		cout << "x o vi tri thu: " << find << endl;
+	}
+	else {
+		cout << "x khong co trong mang " << endl;
+	}
+}
+
 void Xuatmang(int a[], int n) {
 	for (int i = 0; i < n; i++) {
 		cout << "Cac phan tu trong mang la: " << a[i] << endl;
@@ -52,7 +77,10 @@ int main() {
 	Cau_2(a, n);
 	Xuatmang(a, n);
 	Cau_4(a, n);
-	cout << "Mang sau khi sap xep la" << endl;
+	cout << "Mang sau khi da sap xep" << endl;
 	Xuatmang(a, n);
+	Cau_5(a, n, 24);
+	//cout << "Mang sau khi sap xep la" << endl;
+	//Xuatmang(a, n);
 	return 0;
 }
