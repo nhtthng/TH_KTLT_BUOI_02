@@ -69,17 +69,32 @@ void Xuatmang(int a[], int n) {
 	}
 }
 
+void Cau_6(int a[], int& n) {
+	for (int i = 0; i < n - 1; i++) {
+		int minPosition = i;
+		for (int j = i + 1; j < n; j++) {
+			if (a[minPosition] > a[j]) {
+				minPosition = j;
+			}
+		}
+		swap(a[i], a[minPosition]);
+	}
+}
+
 int main() {
 	int n;
 	int a[100];
 	cout << "Nhap so luong: ";
 	cin >> n;
-	Cau_2(a, n);
+	Cau_1(a, n);
 	Xuatmang(a, n);
-	Cau_4(a, n);
-	cout << "Mang sau khi da sap xep" << endl;
+	Cau_6(a, n);
+	cout << "Mang sau khi sap xep la" << endl;
 	Xuatmang(a, n);
-	Cau_5(a, n, 24);
+	//Cau_4(a, n);
+	//cout << "Mang sau khi da sap xep" << endl;
+	//Xuatmang(a, n);
+	//Cau_5(a, n, 24);
 	//cout << "Mang sau khi sap xep la" << endl;
 	//Xuatmang(a, n);
 	return 0;
